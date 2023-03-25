@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 
 import rest_framework.permissions
+from cassandra.connection import ConsistencyLevel
 from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -45,7 +46,8 @@ INSTALLED_APPS = [
     'apis',
 
     # Additional Libs
-    'rest_framework'
+    'rest_framework',
+    'django_cassandra_engine'
 ]
 
 MIDDLEWARE = [
@@ -83,8 +85,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'mongo': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
+    'mongs': {
         'ENGINE': 'djongo',
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
@@ -93,20 +94,23 @@ DATABASES = {
     },
     'default': {
         'ENGINE': 'django_cassandra_engine',
-        'NAME': 'hugo',
-        'TEST_NAME': 'test_hugo',
+        'NAME': 'macintosh',
+        'TEST_NAME': 'test_macintosh',
         'HOST': '127.0.0.1',
-        'USER': 'cassandra',
-        'PASSWORD': 'cassandra',
         'OPTIONS': {
             'replication': {
-                'strategy_class': 'NetworkTopologyStrategy',
-                'replication_factor': 3
+                'strategy_class': 'SimpleStrategy',
+                'replication_factor': 1
+            },
+            'connection': {
+                'consistency': ConsistencyLevel.LOCAL_QUORUM,
+                'retry_connect': True
+            },
+            'session': {
+                'default_timeout': 10,
+                'default_fetch_size': 10000
             }
-        },
-        'SUPPORTS_TRANSACTIONS': False,
-        'CASSANDRA_ENABLE_CASCADING_DELETES': True,
-        'PORT': '9042'
+        }
     }
 }
 
@@ -151,6 +155,6 @@ STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+        # 'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }

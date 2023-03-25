@@ -12,8 +12,8 @@ python-decouple = "*"
 markdown = "*"
 django-filter = "*"
 pygments = "*"
+django-cassandra-engine = "*"
 cassandra-driver = "*"
-django-cassandra-engine = "==1.7.0"
 
 [dev-packages]
 
