@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  cassandra:
+    image: cassandra:5.0
+    env_file:
+      - .env
+    container_name: serv-cassandra
+    ports:
+      - "9042:9042"
+    environment:
+      - CASSANDRA_SEEDS=${SEEDING}
+    networks:
+      - neural-cassandra
+
+networks:
+  neural-cassandra:
+    driver: bridge

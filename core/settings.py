@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
+
+from cassandra import ConsistencyLevel
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -41,6 +43,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+    # Additional Libs
+    'django_cassandra_engine'
 ]
 
 MIDDLEWARE = [
@@ -78,12 +83,36 @@ WSGI_APPLICATION = "core.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    'default': {
+        'ENGINE': 'django_cassandra_engine',
+        'NAME': os.getenv('KEYSPACE'),
+        'TEST_NAME': os.getenv('TEST_KEYSPACE'),
+        'HOST': os.getenv('CASS_HOST'),
+        'OPTIONS': {
+            'replication': {
+                'strategy_class': 'SimpleStrategy',
+                'replication_factor': 1,
+            },
+            'connection': {
+                'consistency': ConsistencyLevel.QUORUM,
+                'retry_connect': True,
+            },
+            'session': {
+                'default_timeout': 10,
+                'default_retry_policy': {
+                    'max_retries': 3,
+                    'interval_start': 0.01,
+                    'interval_end': 0.1,
+                    'interval_step': 0.02,
+                },
+                'consistency': ConsistencyLevel.ONE,
+                'serial_consistency': ConsistencyLevel.SERIAL,
+                'execute_timeout': 10,
+                'metrics_enabled': False,
+            },
+        },
+    },
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

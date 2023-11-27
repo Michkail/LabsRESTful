@@ -18,6 +18,31 @@ typing-extensions = {version = ">=4", markers = "python_version < \"3.11\""}
 tests = ["mypy (>=0.800)", "pytest", "pytest-asyncio"]
 
 [[package]]
+name = "click"
+version = "8.1.7"
+description = "Composable command line interface toolkit"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "click-8.1.7-py3-none-any.whl", hash = "sha256:ae74fb96c20a0277a1d615f1e4d73c8414f5a98db8b799a7931d1582f3390c28"},
+    {file = "click-8.1.7.tar.gz", hash = "sha256:ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"},
+]
+
+[package.dependencies]
+colorama = {version = "*", markers = "platform_system == \"Windows\""}
+
+[[package]]
+name = "colorama"
+version = "0.4.6"
+description = "Cross-platform colored terminal text."
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
+files = [
+    {file = "colorama-0.4.6-py2.py3-none-any.whl", hash = "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"},
+    {file = "colorama-0.4.6.tar.gz", hash = "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"},
+]
+
+[[package]]
 name = "django"
 version = "4.0"
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
@@ -36,6 +61,35 @@ tzdata = {version = "*", markers = "sys_platform == \"win32\""}
 [package.extras]
 argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
+
+[[package]]
+name = "django-cassandra-engine"
+version = "1.8.0"
+description = "Django Cassandra Engine"
+optional = false
+python-versions = ">=3.8,<4.0"
+files = [
+    {file = "django_cassandra_engine-1.8.0.tar.gz", hash = "sha256:58484d89f91d9323a56e64dbda21935ad7ce3b5f70eb0208916b9de9119e80af"},
+]
+
+[package.dependencies]
+django = ">=3.2,<5.0"
+scylla-driver = ">=3.25.0,<4.0.0"
+
+[[package]]
+name = "geomet"
+version = "0.2.1.post1"
+description = "GeoJSON <-> WKT/WKB conversion utilities"
+optional = false
+python-versions = ">2.6, !=3.3.*, <4"
+files = [
+    {file = "geomet-0.2.1.post1-py3-none-any.whl", hash = "sha256:a41a1e336b381416d6cbed7f1745c848e91defaa4d4c1bdc1312732e46ffad2b"},
+    {file = "geomet-0.2.1.post1.tar.gz", hash = "sha256:91d754f7c298cbfcabd3befdb69c641c27fe75e808b27aa55028605761d17e95"},
+]
+
+[package.dependencies]
+click = "*"
+six = "*"
 
 [[package]]
 name = "psycopg-binary"
@@ -126,6 +180,126 @@ files = [
 cli = ["click (>=5.0)"]
 
 [[package]]
+name = "pyyaml"
+version = "6.0.1"
+description = "YAML parser and emitter for Python"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "PyYAML-6.0.1-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:d858aa552c999bc8a8d57426ed01e40bef403cd8ccdd0fc5f6f04a00414cac2a"},
+    {file = "PyYAML-6.0.1-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:fd66fc5d0da6d9815ba2cebeb4205f95818ff4b79c3ebe268e75d961704af52f"},
+    {file = "PyYAML-6.0.1-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:69b023b2b4daa7548bcfbd4aa3da05b3a74b772db9e23b982788168117739938"},
+    {file = "PyYAML-6.0.1-cp310-cp310-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:81e0b275a9ecc9c0c0c07b4b90ba548307583c125f54d5b6946cfee6360c733d"},
+    {file = "PyYAML-6.0.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ba336e390cd8e4d1739f42dfe9bb83a3cc2e80f567d8805e11b46f4a943f5515"},
+    {file = "PyYAML-6.0.1-cp310-cp310-win32.whl", hash = "sha256:bd4af7373a854424dabd882decdc5579653d7868b8fb26dc7d0e99f823aa5924"},
+    {file = "PyYAML-6.0.1-cp310-cp310-win_amd64.whl", hash = "sha256:fd1592b3fdf65fff2ad0004b5e363300ef59ced41c2e6b3a99d4089fa8c5435d"},
+    {file = "PyYAML-6.0.1-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:6965a7bc3cf88e5a1c3bd2e0b5c22f8d677dc88a455344035f03399034eb3007"},
+    {file = "PyYAML-6.0.1-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:f003ed9ad21d6a4713f0a9b5a7a0a79e08dd0f221aff4525a2be4c346ee60aab"},
+    {file = "PyYAML-6.0.1-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:42f8152b8dbc4fe7d96729ec2b99c7097d656dc1213a3229ca5383f973a5ed6d"},
+    {file = "PyYAML-6.0.1-cp311-cp311-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:062582fca9fabdd2c8b54a3ef1c978d786e0f6b3a1510e0ac93ef59e0ddae2bc"},
+    {file = "PyYAML-6.0.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d2b04aac4d386b172d5b9692e2d2da8de7bfb6c387fa4f801fbf6fb2e6ba4673"},
+    {file = "PyYAML-6.0.1-cp311-cp311-win32.whl", hash = "sha256:1635fd110e8d85d55237ab316b5b011de701ea0f29d07611174a1b42f1444741"},
+    {file = "PyYAML-6.0.1-cp311-cp311-win_amd64.whl", hash = "sha256:bf07ee2fef7014951eeb99f56f39c9bb4af143d8aa3c21b1677805985307da34"},
+    {file = "PyYAML-6.0.1-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:50550eb667afee136e9a77d6dc71ae76a44df8b3e51e41b77f6de2932bfe0f47"},
+    {file = "PyYAML-6.0.1-cp36-cp36m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:1fe35611261b29bd1de0070f0b2f47cb6ff71fa6595c077e42bd0c419fa27b98"},
+    {file = "PyYAML-6.0.1-cp36-cp36m-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:704219a11b772aea0d8ecd7058d0082713c3562b4e271b849ad7dc4a5c90c13c"},
+    {file = "PyYAML-6.0.1-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:afd7e57eddb1a54f0f1a974bc4391af8bcce0b444685d936840f125cf046d5bd"},
+    {file = "PyYAML-6.0.1-cp36-cp36m-win32.whl", hash = "sha256:fca0e3a251908a499833aa292323f32437106001d436eca0e6e7833256674585"},
+    {file = "PyYAML-6.0.1-cp36-cp36m-win_amd64.whl", hash = "sha256:f22ac1c3cac4dbc50079e965eba2c1058622631e526bd9afd45fedd49ba781fa"},
+    {file = "PyYAML-6.0.1-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:b1275ad35a5d18c62a7220633c913e1b42d44b46ee12554e5fd39c70a243d6a3"},
+    {file = "PyYAML-6.0.1-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:18aeb1bf9a78867dc38b259769503436b7c72f7a1f1f4c93ff9a17de54319b27"},
+    {file = "PyYAML-6.0.1-cp37-cp37m-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:596106435fa6ad000c2991a98fa58eeb8656ef2325d7e158344fb33864ed87e3"},
+    {file = "PyYAML-6.0.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:baa90d3f661d43131ca170712d903e6295d1f7a0f595074f151c0aed377c9b9c"},
+    {file = "PyYAML-6.0.1-cp37-cp37m-win32.whl", hash = "sha256:9046c58c4395dff28dd494285c82ba00b546adfc7ef001486fbf0324bc174fba"},
+    {file = "PyYAML-6.0.1-cp37-cp37m-win_amd64.whl", hash = "sha256:4fb147e7a67ef577a588a0e2c17b6db51dda102c71de36f8549b6816a96e1867"},
+    {file = "PyYAML-6.0.1-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:1d4c7e777c441b20e32f52bd377e0c409713e8bb1386e1099c2415f26e479595"},
+    {file = "PyYAML-6.0.1-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a0cd17c15d3bb3fa06978b4e8958dcdc6e0174ccea823003a106c7d4d7899ac5"},
+    {file = "PyYAML-6.0.1-cp38-cp38-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:28c119d996beec18c05208a8bd78cbe4007878c6dd15091efb73a30e90539696"},
+    {file = "PyYAML-6.0.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:7e07cbde391ba96ab58e532ff4803f79c4129397514e1413a7dc761ccd755735"},
+    {file = "PyYAML-6.0.1-cp38-cp38-win32.whl", hash = "sha256:184c5108a2aca3c5b3d3bf9395d50893a7ab82a38004c8f61c258d4428e80206"},
+    {file = "PyYAML-6.0.1-cp38-cp38-win_amd64.whl", hash = "sha256:1e2722cc9fbb45d9b87631ac70924c11d3a401b2d7f410cc0e3bbf249f2dca62"},
+    {file = "PyYAML-6.0.1-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:9eb6caa9a297fc2c2fb8862bc5370d0303ddba53ba97e71f08023b6cd73d16a8"},
+    {file = "PyYAML-6.0.1-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:c8098ddcc2a85b61647b2590f825f3db38891662cfc2fc776415143f599bb859"},
+    {file = "PyYAML-6.0.1-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:5773183b6446b2c99bb77e77595dd486303b4faab2b086e7b17bc6bef28865f6"},
+    {file = "PyYAML-6.0.1-cp39-cp39-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:b786eecbdf8499b9ca1d697215862083bd6d2a99965554781d0d8d1ad31e13a0"},
+    {file = "PyYAML-6.0.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:bc1bf2925a1ecd43da378f4db9e4f799775d6367bdb94671027b73b393a7c42c"},
+    {file = "PyYAML-6.0.1-cp39-cp39-win32.whl", hash = "sha256:faca3bdcf85b2fc05d06ff3fbc1f83e1391b3e724afa3feba7d13eeab355484c"},
+    {file = "PyYAML-6.0.1-cp39-cp39-win_amd64.whl", hash = "sha256:510c9deebc5c0225e8c96813043e62b680ba2f9c50a08d3724c7f28a747d1486"},
+    {file = "PyYAML-6.0.1.tar.gz", hash = "sha256:bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"},
+]
+
+[[package]]
+name = "scylla-driver"
+version = "3.26.3"
+description = "Scylla Driver for Apache Cassandra"
+optional = false
+python-versions = "*"
+files = [
+    {file = "scylla-driver-3.26.3.tar.gz", hash = "sha256:3fcc2b2945dd29254a1736614351bcc44c7dbd818dc6fdbf9eb1952b1d72bfc0"},
+    {file = "scylla_driver-3.26.3-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:9c4a45e90d9e666fdb0918b061b7129ea4f3807f2914c156c489b53500b092f8"},
+    {file = "scylla_driver-3.26.3-cp310-cp310-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:0622cddbefd31fb1eeb7131215ee812e994c88029779ed66e85a0e4d5a08f0cb"},
+    {file = "scylla_driver-3.26.3-cp310-cp310-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:31b37c8a40555e7b39309d18e1197ea85ca5245093c29f7a51ee1598ac904f4b"},
+    {file = "scylla_driver-3.26.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:51a4035879034fa47126cb303ce248faf3556d64c57bfb05cbd931f587c8d310"},
+    {file = "scylla_driver-3.26.3-cp310-cp310-win32.whl", hash = "sha256:9e55b151aa427e156f7492e3a1a16cf22569c09c62c746be196b4106d91c7441"},
+    {file = "scylla_driver-3.26.3-cp310-cp310-win_amd64.whl", hash = "sha256:d0ce0f87846b2238895cf612372db7b96e9a33fa5018595d646edc52eb91b4ec"},
+    {file = "scylla_driver-3.26.3-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:6c35158d0ec26da002b587463556ff0c8cc74e9b45125b2bee8783a931ce7b43"},
+    {file = "scylla_driver-3.26.3-cp311-cp311-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:d845455f863c63f371ef46185a4b5ee4fdde4b7335f06d20f9261d9d43306962"},
+    {file = "scylla_driver-3.26.3-cp311-cp311-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:993f999f5e42417c6ef263d914a3c6c58576217e31fac545181229b90153656b"},
+    {file = "scylla_driver-3.26.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:7d25c96dad60d0c9d9b00606a4055ac1fe0af4b08813df10ac6f24d7dd7f508a"},
+    {file = "scylla_driver-3.26.3-cp311-cp311-win32.whl", hash = "sha256:4779e023a9b230df810a5bd04953a722279033bdf36f66a7c7e82f5ebcb3a191"},
+    {file = "scylla_driver-3.26.3-cp311-cp311-win_amd64.whl", hash = "sha256:f428be3dcb31d02fec945564ea9449d18f34e5f8f533e13284e5c52638907b57"},
+    {file = "scylla_driver-3.26.3-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:1e5d95b42f92f906d1628a4af6b6f5a3e86cc81b97b0a5878e27f7ad07309fee"},
+    {file = "scylla_driver-3.26.3-cp37-cp37m-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:5089a3242065f1993c7f3d9970e7b3bead195bf3e3fcf2b4a39996d93a2b1ffb"},
+    {file = "scylla_driver-3.26.3-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:5cacaf54fc7e0f2041609c97c0a5416081248ab9abd601cf47a7f957dc54e867"},
+    {file = "scylla_driver-3.26.3-cp37-cp37m-win32.whl", hash = "sha256:60ae686b1f60f5f46cb8cd8dfd250542cfd3a484f9c5c272ada7619fe3f6e4e2"},
+    {file = "scylla_driver-3.26.3-cp37-cp37m-win_amd64.whl", hash = "sha256:19153c0674e62d383e29aaedeaa597b421fe9ee3e241f09fcd54251bf3547c98"},
+    {file = "scylla_driver-3.26.3-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:a4f5773c3c7852e3bf1d05b69fd085f3914f9b271cbb08a5d6e441cce74cd73b"},
+    {file = "scylla_driver-3.26.3-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7310dfb6a7b55c18239b0f4a1acb20ac78435dd0229287b9df0a37ce5f34df89"},
+    {file = "scylla_driver-3.26.3-cp38-cp38-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:7f0c5a20f52dfdc2d4eefa286a6941bed9377a95a6e3f5cc5f7e81b41af1a7b3"},
+    {file = "scylla_driver-3.26.3-cp38-cp38-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:4c3230b1c4e7238610751e2709da7d51ca28f6bf654f63b03b992e573d4b1892"},
+    {file = "scylla_driver-3.26.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:29954339bacec4e6b6c8cc168466658fced32c0bfb4a882f3ddbb5ba495f03f8"},
+    {file = "scylla_driver-3.26.3-cp38-cp38-win32.whl", hash = "sha256:4a7e56ccd5ef8aeec64da4175da074d24859ccc16818a445212aa4d0750c3e76"},
+    {file = "scylla_driver-3.26.3-cp38-cp38-win_amd64.whl", hash = "sha256:c2bf1b9359b8b07b98512ce1e7f52e8699df2d5fbcd2942882d08a2e92908a6f"},
+    {file = "scylla_driver-3.26.3-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b491d556562edef95967afe3cfb5b792a9e94b5a161cadfeb3df2fdda2fe5baa"},
+    {file = "scylla_driver-3.26.3-cp39-cp39-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:aa4422cd66a5a88e265d45ec508a0e9039ee5ab09712bff261dba0db077206bc"},
+    {file = "scylla_driver-3.26.3-cp39-cp39-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:e24a6b50456421205ee508d2549956c4c30cea7cc241659d557f25261b3ae38b"},
+    {file = "scylla_driver-3.26.3-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6bf2537a04f1009c6cb22edfc74050d5ebfdd33c132fd6ac19dc5838b2cea2fd"},
+    {file = "scylla_driver-3.26.3-cp39-cp39-win32.whl", hash = "sha256:e398b8a8bbc1d8f2d4aea90431178e455e7987d480f5672e1e2f9ccae61b6459"},
+    {file = "scylla_driver-3.26.3-cp39-cp39-win_amd64.whl", hash = "sha256:3da28220de4a7b6b3ecca10138e7a5d3ba2e21cd627463bbff69d9a0182127b3"},
+    {file = "scylla_driver-3.26.3-pp37-pypy37_pp73-macosx_10_9_x86_64.whl", hash = "sha256:ebd8e51eaa105ebd71d343981d8178638fc95432d541f3881aabdfdca86cf160"},
+    {file = "scylla_driver-3.26.3-pp37-pypy37_pp73-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:067c35d03dc1ffdd424c75b915a360673f1750fa99414b99d4d5d1f5eab46e40"},
+    {file = "scylla_driver-3.26.3-pp37-pypy37_pp73-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1fc7fbbc884ca9c7067b3fe341cb9e887dbd0bfb7b59c8f3b8e8046b01d56ec1"},
+    {file = "scylla_driver-3.26.3-pp37-pypy37_pp73-win_amd64.whl", hash = "sha256:b9be40ea0b4cb0db896ecdd4c13194d0fcfa228e03715d7c5af0f1c1123eb621"},
+    {file = "scylla_driver-3.26.3-pp38-pypy38_pp73-macosx_10_9_x86_64.whl", hash = "sha256:851e64bb81549628fd5fa189f63587edb4713ae2d30a3439d20985d4ffcbca3e"},
+    {file = "scylla_driver-3.26.3-pp38-pypy38_pp73-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:38d57567fa4c5cc6be4e24ad9753d8433be7c203a0a343855d6190bb16912590"},
+    {file = "scylla_driver-3.26.3-pp38-pypy38_pp73-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b618f31e8be0aef9d5f962966f14d036db752d56b7b9311ffe063a40f6de4b53"},
+    {file = "scylla_driver-3.26.3-pp38-pypy38_pp73-win_amd64.whl", hash = "sha256:4ec9985546bb12ff9e4ac4a80f978c05107f9ebabcd3ec6704ea7096c246171e"},
+    {file = "scylla_driver-3.26.3-pp39-pypy39_pp73-macosx_10_9_x86_64.whl", hash = "sha256:eac34cd8b139d4e74ae69220a22ed1c575db9d6323354057d0e1abb2f06e8ad7"},
+    {file = "scylla_driver-3.26.3-pp39-pypy39_pp73-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:1c6c223b2cac545766de0409efbd8bf0ab7388d67928837ea6aa3fd53bb9cf9e"},
+    {file = "scylla_driver-3.26.3-pp39-pypy39_pp73-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:88d710afeee5d0636e5e96625f08522581bebaa174c49b113a31cc14b9f147f7"},
+    {file = "scylla_driver-3.26.3-pp39-pypy39_pp73-win_amd64.whl", hash = "sha256:1c5db43cf7fda0384dbeead819bbe607ba3a417372bf8365f1f88e7fd491ad48"},
+]
+
+[package.dependencies]
+geomet = ">=0.1,<0.3"
+pyyaml = ">5.0"
+six = ">=1.9"
+
+[package.extras]
+graph = ["gremlinpython (==3.4.6)"]
+
+[[package]]
+name = "six"
+version = "1.16.0"
+description = "Python 2 and 3 compatibility utilities"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
+files = [
+    {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
+    {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
+]
+
+[[package]]
 name = "sqlparse"
 version = "0.4.4"
 description = "A non-validating SQL parser."
@@ -166,4 +340,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "e7bab01df8a0f5a3032f45e06f2ec99c40e7a39cfa72de23f3bfeeacaa80f942"
+content-hash = "287a85c4d2d5bd1ada7d8096d5b9a3b0ba6105283704f4c8e03ce2b8321ad346"
