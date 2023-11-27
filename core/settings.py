@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 import os
+import uuid
 from pathlib import Path
 
 from cassandra import ConsistencyLevel
@@ -45,7 +46,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     # Additional Libs
-    'django_cassandra_engine'
+    'django_cassandra_engine',
+
+    # Apps
+    'features.user.apps',
+    'expo_user'
 ]
 
 MIDDLEWARE = [
@@ -110,6 +115,11 @@ DATABASES = {
                 'execute_timeout': 10,
                 'metrics_enabled': False,
             },
+            'object_mapper_class': 'django_cassandra_engine.models.DjangoCassandraModel',
+            'object_mapper_options': {
+                'enable_create_key': False,
+            },
+            'uuid_gen': uuid.uuid4
         },
     },
 }
