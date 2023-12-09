@@ -11,7 +11,7 @@ services:
       - VIRTUAL_HOST=${DOMAIN_NAME}
     ports:
       - "80:80"
-  networks:
-    default:
-      aliases:
-        - ${DOMAIN_NAME}
+    networks:
+      default:
+        aliases:
+          - ${DOMAIN_NAME}
