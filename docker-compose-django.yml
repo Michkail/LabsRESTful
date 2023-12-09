@@ -10,4 +10,4 @@ services:
       - .env
       - VIRTUAL_HOST=${DOMAIN_NAME}
     ports:
-      - "80:80"
+      - "80:8000"
