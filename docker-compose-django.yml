@@ -6,12 +6,5 @@ services:
     volumes:
       - .:/app
       - ./staticfiles:/app/staticfiles
-    environment:
-      - .env
-      - VIRTUAL_HOST=${DOMAIN_NAME}
     ports:
       - "8000:8000"
-    networks:
-      default:
-        aliases:
-          - ${DOMAIN_NAME}
