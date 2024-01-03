@@ -1,0 +1,180 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Wedding Invitation</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+	
+	<link href="https://fonts.googleapis.com/css?family=Montez" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'wedding/css/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'wedding/css/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'wedding/css/bootstrap.css' %}">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="{% static 'wedding/css/superfish.css' %}">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="{% static 'wedding/css/magnific-popup.css' %}">
+	
+	<link rel="stylesheet" href="{% static 'wedding/css/style.css' %}">
+
+
+	<!-- Modernizr JS -->
+	<script src="{% static 'wedding/js/modernizr-2.6.2.min.js' %}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="{% static 'wedding/js/respond.min.js' %}"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+		<div id="fh5co-wrapper">
+		<div id="fh5co-page">
+	
+		<div class="fh5co-hero" data-section="home">
+			<div class="fh5co-overlay"></div>
+			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url({% static 'wedding/images/cover_bg_1.jpg' %});">
+				<div class="display-t">
+					<div class="display-tc">
+						<div class="container">
+							<div class="col-md-10 col-md-offset-1">
+								<div class="animate-box">
+									<h1>The Wedding</h1>
+									<h2>Fajar &amp; Resa</h2>
+									<p><span>19.1.2024</span></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- end:header-top -->
+		
+		<div id="fh5co-couple" class="fh5co-section-gray">
+			<div class="container">
+				<div class="row row-bottom-padded-md animate-box">
+					<div class="col-md-6 col-md-offset-3 text-center">
+						<div class="col-md-5 col-sm-5 col-xs-5 nopadding">
+							<img src="{% static 'wedding/images/resa_p.jpeg' %}" class="img-responsive" alt="">
+							<h3>Resa Puji Handayani</h3>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-2 nopadding"><h2 class="amp-center"><i class="icon-heart"></i></h2></div>
+						<div class="col-md-5 col-sm-5 col-xs-5 nopadding">
+							<img src="{% static 'wedding/images/fajar_f.jpeg' %}" class="img-responsive" alt="">
+							<h3>Fajar Fediansyah</h3>
+						</div>
+					</div>
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2">
+						<div class="col-md-12 text-center heading-section">
+							<h2>Marriage Solemnization Ceremony</h2>
+							<p><strong>on January 19, 2024 &mdash; South Jakarta, Indonesia</strong></p>
+							<p>Desa Milangsari rt 99/rw 99 pilang asri, Kel. Milangsari, Kec. Panekan, Kab. Magetan</p>
+						</div>
+					</div>
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2">
+						<div class="col-md-12 text-center heading-section">
+							<h2>Wedding Reception</h2>
+							<p><strong>on January 20, 2024 &mdash; South Jakarta, Indonesia</strong></p>
+							<p>Desa Milangsari rt 99/rw 99 pilang asri, Kel. Milangsari, Kec. Panekan, Kab. Magetan</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="fh5co-countdown">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center animate-box">
+					<p class="countdown" id="countdown-fajar">
+						<span id="fajar-days"></span>
+						<span id="fajar-hours"></span>
+						<span id="fajar-minutes"></span>
+						<span id="fajar-seconds"></span>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="fh5co-started" style="background-image:url({% static 'wedding/images/cover_bg_2.jpg' %});">
+		<div class="overlay"></div>
+			<div class="container">
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center heading-section">
+						<h2>Are You Attending?</h2>
+						<p>Please Fill-up the form to notify you that you're attending. Thanks.
+					</div>
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-10 col-md-offset-1">
+						<form class="form-inline">
+							<div class="col-md-8 col-sm-8">
+								<div class="form-group">
+									<label for="name" class="sr-only">Name</label>
+									<input type="name" class="form-control" id="name" placeholder="Name">
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4">
+								<button type="submit" class="btn btn-primary btn-block">I am Attending</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<footer>
+			<div id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<h2>Fajar &amp; Resa</h2>
+						</div>
+						<div class="col-md-6 col-md-offset-3 text-center">
+							<p>Powered by <a href="https://pitrlabs.com" target="_blank">pitrLabs.com</a> </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	
+
+	</div>
+	<!-- END fh5co-page -->
+
+	</div>
+	<!-- END fh5co-wrapper -->
+
+	<!-- Google Map -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+	<!-- jQuery -->
+	<script src="{% static 'wedding/dist/scripts.min.js' %}"></script>
+	<script src="{% static 'wedding/js/countdown.js' %}"></script>
+	</body>
+</html>
+

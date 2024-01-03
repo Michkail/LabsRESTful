@@ -50,7 +50,8 @@ INSTALLED_APPS = [
 
     # Apps
     'features.user.apps',
-    'expo_user'
+    'expo_user',
+    'wedding'
 ]
 
 MIDDLEWARE = [
