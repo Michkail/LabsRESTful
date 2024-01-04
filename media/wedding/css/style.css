@@ -528,6 +528,7 @@ figure {
 }
 
 #fh5co-couple,
+#fh5co-bank,
 #fh5co-countdown,
 #fh5co-groom-bride,
 #fh5co-blog-section,
@@ -541,6 +542,7 @@ figure {
 
 @media screen and (max-width: 768px) {
   #fh5co-couple,
+  #fh5co-bank,
   #fh5co-countdown,
   #fh5co-groom-bride,
   #fh5co-blog-section,
