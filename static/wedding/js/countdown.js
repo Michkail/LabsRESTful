@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const countdownDate = new Date(2024, 0, 19, 0, 0, 0).getTime();
+  const countdownDate = new Date(2024, 0, 20, 0, 0, 0).getTime();
 
   const countdownElement = document.getElementById('countdown-fajar');
   const countdownInterval = setInterval(function() {
