@@ -11,15 +11,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById("fajar-days").innerHTML = days + " <small>Days</small>";
-	document.getElementById("fajar-hours").innerHTML = hours + " <small>Hours</small> ";
-	document.getElementById("fajar-minutes").innerHTML = minutes + " <small>Minutes</small> ";
-	document.getElementById("fajar-seconds").innerHTML = seconds + " <small>Seconds</small> ";
+    document.getElementById("fajar-days").innerHTML = days + " <small>Hari</small>";
+	document.getElementById("fajar-hours").innerHTML = hours + " <small>Jam</small> ";
+	document.getElementById("fajar-minutes").innerHTML = minutes + " <small>Menit</small> ";
+	document.getElementById("fajar-seconds").innerHTML = seconds + " <small>Detik</small> ";
 
 
     if (distance < 0) {
       clearInterval(countdownInterval);
-      countdownElement.innerHTML = 'The Wedding Ceremony is Over!!';
+      countdownElement.innerHTML = '- - - -';
     }
   }, 1000);
 });
