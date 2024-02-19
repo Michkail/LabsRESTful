@@ -2915,22 +2915,22 @@ textarea.form-control-lg {
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #8220cc;
-  border-color: #7a1ec0;
+  background-color: #275796;
+  border-color: rgba(49, 110, 189, 0.98);
 }
 .btn-check:focus + .btn-primary, .btn-primary:focus {
   color: #fff;
-  background-color: #8220cc;
-  border-color: #7a1ec0;
-  box-shadow: 0 0 0 0.25rem rgba(168, 71, 242, 0.5);
+  background-color: #43BDC1;
+  border-color: #43BDC1;
+  box-shadow: 0 0 0 0.25rem rgba(49, 110, 189, 0.98);
 }
 .btn-check:checked + .btn-primary, .btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #7a1ec0;
-  border-color: #731db4;
+  background-color: #275796;
+  border-color: #275796;
 }
 .btn-check:checked + .btn-primary:focus, .btn-check:active + .btn-primary:focus, .btn-primary:active:focus, .btn-primary.active:focus, .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.25rem rgba(168, 71, 242, 0.5);
+  box-shadow: 0 0 0 0.25rem rgba(49, 110, 189, 0.98);
 }
 .btn-primary:disabled, .btn-primary.disabled {
   color: #fff;
@@ -10933,6 +10933,7 @@ textarea.form-control-lg {
 
 .services {
   position: relative;
+  background-color: #e0e0e0;
   padding: 1rem 0;
 }
 .services__content {
@@ -11212,4 +11213,31 @@ textarea.form-control-lg {
   transform: translate(-50%, -50%);
 }
 
+.serv-neu-flat {
+  border-radius: 50px 10px 10px 50px;
+  background: linear-gradient(225deg, #cacaca, #f0f0f0);
+  box-shadow:  -20px 20px 62px #cccccc,
+               20px -20px 62px #f4f4f4;
+}
+
+.serv-neu-concave {
+  border-radius: 10px 50px 50px 10px;
+  background: linear-gradient(145deg, #cacaca, #f0f0f0);
+  box-shadow:  20px 20px 40px #bebebe,
+               -20px -20px 60px #ffffff;
+}
+
+.serv-neu-prod-even {
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: inset 20px 20px 31px #bebebe,
+              inset -20px -20px 31px #ffffff;
+}
+
+.serv-neu-prod-odd {
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: inset 20px -20px 31px #bebebe,
+              inset -20px 20px 31px #ffffff;
+}
 /*# sourceMappingURL=style.css.map */

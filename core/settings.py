@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 import os
+import sys
 import uuid
 from pathlib import Path
 
@@ -32,7 +33,7 @@ SECRET_KEY = os.getenv('SEC')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(",")
 
 
 # Application definition
@@ -46,12 +47,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     # Additional Libs
-    'django_cassandra_engine',
+    "django_cassandra_engine",
+    "rest_framework",
 
     # Apps
-    'features.user.apps',
-    'expo_user',
-    'wedding'
+    "user.apps.UserConfig"
 ]
 
 MIDDLEWARE = [
@@ -84,12 +84,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "core.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'lake': {
         'ENGINE': 'django_cassandra_engine',
         'NAME': os.getenv('KEYSPACE'),
         'TEST_NAME': os.getenv('TEST_KEYSPACE'),
@@ -123,21 +122,29 @@ DATABASES = {
             'uuid_gen': uuid.uuid4
         },
     },
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD')
+    },
 }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
-    },
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+    # },
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+    # },
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+    # },
     {
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
@@ -171,3 +178,13 @@ STATIC_ROOT = 'media'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_RENDERER_CLASSES': [
+#         'rest_framework.renderers.JSONRenderer',
+#     ]
+# }
+
+AUTH_USER_MODEL = 'user.User'
+
+sys.path.append(os.path.join(BASE_DIR, 'features'))
