@@ -11212,4 +11212,19 @@ textarea.form-control-lg {
   transform: translate(-50%, -50%);
 }
 
+.changeToUS {
+  width: 24px;
+  height: 24px;
+  background: url('../images/lang/us.svg') no-repeat center center;
+  border: none;
+  cursor: pointer;
+}
+
+.changeToID {
+  width: 24px;
+  height: 24px;
+  background: url('../images/lang/id.svg') no-repeat center center;
+  border: none;
+  cursor: pointer;
+}
 /*# sourceMappingURL=style.css.map */
