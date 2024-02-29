@@ -10938,7 +10938,7 @@ textarea.form-control-lg {
 }
 .services__content {
   padding: 1rem;
-  margin-top: 0;
+  /*margin-top: 0;*/
 }
 .services__content p {
   font-size: 0.8rem;
@@ -10950,16 +10950,18 @@ textarea.form-control-lg {
 }
 @media (min-width: 992px) {
   .services__content {
-    margin-top: 5rem;
+    margin-top: 2rem;
   }
 }
 .services__content .icon {
   font-size: 1.5rem;
   color: #43BDC1;
+  margin-right: 2px;
 }
 @media (min-width: 992px) {
   .services__content .icon {
     font-size: 2.5rem;
+    margin-right: 2px;
   }
 }
 .services__pic {

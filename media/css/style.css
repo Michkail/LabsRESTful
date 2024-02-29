@@ -10787,7 +10787,18 @@ textarea.form-control-lg {
 .btn-rounded:hover span {
   background-color: rgba(0, 0, 0, 0.6);
 }
-
+.btn-rounded-about {
+  position: relative;
+  padding: 0.8375rem 4.375rem 0.8375rem 4.375rem;
+  font-weight: 700;
+  margin: 0;
+  border: 0.1rem solid rgba(255, 255, 255, 0.6);
+  background-color: #fff;
+  display: block;
+}
+.btn-rounded-about:hover {
+  background: linear-gradient(to right, rgba(67, 189, 193, 1), rgba(39, 87, 150, 1));
+  color: #fff;
 .display-2 {
   margin-bottom: 1rem;
   /*text-transform: capitalize;*/
