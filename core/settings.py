@@ -31,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SEC')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(",")
 
@@ -96,40 +96,40 @@ DATABASES = {
         'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASSWORD')
     },
-    'lake': {
-        'ENGINE': 'django_cassandra_engine',
-        'NAME': os.getenv('KEYSPACE'),
-        'TEST_NAME': os.getenv('TEST_KEYSPACE'),
-        'HOST': os.getenv('CASS_HOST'),
-        'OPTIONS': {
-            'replication': {
-                'strategy_class': 'SimpleStrategy',
-                'replication_factor': 1,
-            },
-            'connection': {
-                'consistency': ConsistencyLevel.QUORUM,
-                'retry_connect': True,
-            },
-            'session': {
-                'default_timeout': 10,
-                'default_retry_policy': {
-                    'max_retries': 3,
-                    'interval_start': 0.01,
-                    'interval_end': 0.1,
-                    'interval_step': 0.02,
-                },
-                'consistency': ConsistencyLevel.ONE,
-                'serial_consistency': ConsistencyLevel.SERIAL,
-                'execute_timeout': 10,
-                'metrics_enabled': False,
-            },
-            'object_mapper_class': 'django_cassandra_engine.models.DjangoCassandraModel',
-            'object_mapper_options': {
-                'enable_create_key': False,
-            },
-            'uuid_gen': uuid.uuid4
-        },
-    },
+    # 'lake': {
+    #     'ENGINE': 'django_cassandra_engine',
+    #     'NAME': os.getenv('KEYSPACE'),
+    #     'TEST_NAME': os.getenv('TEST_KEYSPACE'),
+    #     'HOST': os.getenv('CASS_HOST'),
+    #     'OPTIONS': {
+    #         'replication': {
+    #             'strategy_class': 'SimpleStrategy',
+    #             'replication_factor': 1,
+    #         },
+    #         'connection': {
+    #             'consistency': ConsistencyLevel.QUORUM,
+    #             'retry_connect': True,
+    #         },
+    #         'session': {
+    #             'default_timeout': 10,
+    #             'default_retry_policy': {
+    #                 'max_retries': 3,
+    #                 'interval_start': 0.01,
+    #                 'interval_end': 0.1,
+    #                 'interval_step': 0.02,
+    #             },
+    #             'consistency': ConsistencyLevel.ONE,
+    #             'serial_consistency': ConsistencyLevel.SERIAL,
+    #             'execute_timeout': 10,
+    #             'metrics_enabled': False,
+    #         },
+    #         'object_mapper_class': 'django_cassandra_engine.models.DjangoCassandraModel',
+    #         'object_mapper_options': {
+    #             'enable_create_key': False,
+    #         },
+    #         'uuid_gen': uuid.uuid4
+    #     },
+    # },
 }
 
 # Password validation
@@ -173,7 +173,8 @@ STATICFILES_DIRS = (
 )
 
 STATIC_ROOT = 'media'
-
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 

@@ -1,5 +1,0 @@
-0001,Jakarta
-0002,Bandung
-0003,Surabaya
-0004,Semarang
-0005,Padang
