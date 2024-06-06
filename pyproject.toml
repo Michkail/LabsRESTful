@@ -2,7 +2,7 @@
 name = "labsrestful"
 version = "0.1.0"
 description = ""
-authors = ["michkail <michkail@sateknologi.id>"]
+authors = ["Michkail Piter <michkail@pitrlabs.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
