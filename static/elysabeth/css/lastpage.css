@@ -19,17 +19,17 @@ body {
   margin: 10px;
   font-family: "courier";
   margin-bottom: 20px;
-  background-color: #ffe3e1;
+  background-color: #f5ff00;
   color: #009dff;
   border-radius: 12px;
-  border: 2px solid #ffe3e1;
+  border: 2px solid #f5ff00;
   box-shadow: 1px 1px 2px #00b7ff;
   transition: 0.3s;
 }
 
 .button:hover {
   background-color: #00b7ff;
-  color: #00b7ff;
-  border: 2px solid #ff9494;
-  box-shadow: 1px 1px 2px #00b7ff;
+  color: #f5ff00;
+  border: 2px solid #00b7ff;
+  box-shadow: 1px 1px 2px #fdffb3;
 }

@@ -43,7 +43,7 @@ form .header {
 .button:hover {
   background-color: #94cfff;
   color: #e3f1ff;
-  border: 2px solid #94cfff;
+  border: 2px solid #009dff;
 }
 
 input[type="date"] {
@@ -56,5 +56,5 @@ input[type="date"] {
   background-color: #e3f1ff;
   color: #009dff;
   border-radius: 12px;
-  border: 2px solid #e3f1ff;
+  border: 2px solid #94cfff;
 }

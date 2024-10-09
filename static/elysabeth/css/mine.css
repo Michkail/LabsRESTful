@@ -2,7 +2,7 @@ body {
   text-align: center;
   margin-top: 30px;
   font-family: "Courier";
-  background-color: #f5ff00;
+  background-color: #e3f3ff;
   color: #00b7ff;
 }
 
@@ -35,5 +35,5 @@ img {
   background-color: #009dff;
   color: #f5ff00;
   border: 2px solid #00b7ff;
-  box-shadow: 1px 1px 2px #f5ff00;
+  box-shadow: 1px 1px 2px #fdffb3;
 }
