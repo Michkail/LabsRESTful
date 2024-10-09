@@ -39,9 +39,14 @@ def elys_index(request):
 
 
 def elys_activities(request):
-    if request.method == 'POST':
-        answer = request.POST.get('answer')
-        logger.info(f"->> Activities on: {answer}")
+    selected_activities = request.POST.getlist('activities')
+
+    if selected_activities:
+        activities_choices = ', '.join(selected_activities)
+        logger.info(f"->> User selected the following activities: {activities_choices}")
+
+    else:
+        logger.info("->> No activities selected by the user.")
 
         return redirect("elys-last")
 
@@ -59,9 +64,14 @@ def elys_date(request):
 
 
 def elys_dessert(request):
-    if request.method == "POST":
-        answer = request.POST.get('answer')
-        logger.info(f"->> Dessert on: {answer}")
+    selected_dessert = request.POST.getlist('dessert')
+
+    if selected_dessert:
+        dessert_choices = ', '.join(selected_dessert)
+        logger.info(f"->> User selected the following dessert: {dessert_choices}")
+
+    else:
+        logger.info("->> No dessert selected by the user.")
 
         return redirect("elys-activities")
 
