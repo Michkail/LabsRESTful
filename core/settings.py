@@ -35,6 +35,10 @@ DEBUG = False
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(",")
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://pitrlabs.com'
+]
+
 
 # Application definition
 
