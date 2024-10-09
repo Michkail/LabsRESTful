@@ -1,0 +1,39 @@
+body {
+  text-align: center;
+  margin-top: 30px;
+  font-family: "Courier";
+  background-color: #f5ff00;
+  color: #00b7ff;
+}
+
+img {
+  height: 400px;
+  width: auto;
+  padding: 10px;
+}
+
+#beMineQuestion {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+.answerButton {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 10px;
+  font-family: "courier";
+  margin-bottom: 20px;
+  background-color: #f5ff00;
+  color: #e67373;
+  border-radius: 12px;
+  border: 2px solid #f5ff00;
+  box-shadow: 1px 1px 2px #ff9494;
+  transition: 0.3s;
+}
+
+.answerButton:hover {
+  background-color: #e67373;
+  color: #f5ff00;
+  border: 2px solid #ff9494;
+  box-shadow: 1px 1px 2px #f5ff00;
+}
