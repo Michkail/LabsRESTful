@@ -24,16 +24,16 @@ img {
   font-family: "courier";
   margin-bottom: 20px;
   background-color: #f5ff00;
-  color: #e67373;
+  color: #009dff;
   border-radius: 12px;
   border: 2px solid #f5ff00;
-  box-shadow: 1px 1px 2px #ff9494;
+  box-shadow: 1px 1px 2px #00b7ff;
   transition: 0.3s;
 }
 
 .answerButton:hover {
-  background-color: #e67373;
+  background-color: #009dff;
   color: #f5ff00;
-  border: 2px solid #ff9494;
+  border: 2px solid #00b7ff;
   box-shadow: 1px 1px 2px #f5ff00;
 }

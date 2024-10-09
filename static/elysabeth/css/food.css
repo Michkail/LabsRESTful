@@ -2,8 +2,8 @@ body {
   text-align: center;
   margin-top: 30px;
   font-family: "Courier";
-  background-color: #fff5e4;
-  color: #ff9494;
+  background-color: #e3f3ff;
+  color: #00b7ff;
 }
 #foodquestion {
   font-size: 50px;
@@ -13,13 +13,13 @@ body {
   display: inline-block;
   margin: 10px;
   vertical-align: top;
-  color: #ff9494;
+  color: #00b7ff;
 }
 .food-item img {
   height: 200px;
   width: 200px;
   border-radius: 50%;
-  border: 5px solid #ff9494;
+  border: 5px solid #00b7ff;
   object-fit: cover;
   padding: 10px;
 }
@@ -33,8 +33,8 @@ body {
   margin: 10px;
   font-family: "courier";
   margin-bottom: 20px;
-  background-color: #ffe3e1;
-  color: #e67373;
+  background-color: #e3f1ff;
+  color: #009dff;
   border-radius: 12px;
-  border: 2px solid #ffe3e1;
+  border: 2px solid #e3f1ff;
 }

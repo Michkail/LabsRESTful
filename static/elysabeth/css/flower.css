@@ -13,14 +13,14 @@
 }
 
 body{
-    background-color: #FFF5E4;
+    background-color: #e3f1ff;
     min-height: 100vh;
     display: flex;
     flex-direction: column; /* Change the direction to column */
     align-items: center;
     justify-content: flex-start; /* Align items to the start of the container */
     overflow: hidden;
-	color: #FF9494;
+	color: #00b7ff;
 	font-family: courier;
 }
 
@@ -145,14 +145,14 @@ body{
 .f-wrapper--3 .flower__leaf:not(:first-child){
     width: 3.8vmin;
     height: 10vmin;
-    background-image: linear-gradient(to bottom, #ad2be0 ,#712291, #1a233a 99%);
+    background-image: linear-gradient(to bottom, #94cfff, #009dff, #1a233a 99%);
 }
 
 .f-wrapper--3 .flower__leaf--1{
     width: 8vmin;
     height: 10vmin;
     bottom: 2vmin;
-    background-color: #ad2be0;
+    background-color: #00b7ff;
 }
 
 .f-wrapper--2 .flower__leaf--1{
@@ -175,7 +175,7 @@ body{
     width: 10vmin;
     height: 9vmin;
     left: -10% !important;
-    background-image: linear-gradient(to left bottom, #ad2be0 ,#712291);;
+    background-image: linear-gradient(to left bottom, #94cfff, #009dff);;
 }
 
 .flower__line{
@@ -202,7 +202,7 @@ body{
     transform: translateX(-50%);
     width: 5vmin;
     height: 14vmin;
-    background-image: linear-gradient(to bottom, #ffa085 ,#fa7373, #1a233a 99%);
+    background-image: linear-gradient(to bottom, #fdffb3, #faff82, #1a233a 99%);
 
     clip-path: ellipse(50% 50% at 50% 50%);
     transform-origin: center bottom;
@@ -214,7 +214,7 @@ body{
     height: 12vmin;
     bottom: 3vmin;
     border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%;
-    background-color: #e24f5f;
+    background-color: #f5ff00;
     background-image: none;
     animation: open-flowe--middle  1.4s 1s backwards;
 }
@@ -250,7 +250,7 @@ body{
     clip-path: none;
     border-radius: 10vmin 2vmin 10vmin 2vmin;
     transform: rotate(-55deg);
-    background-image: linear-gradient(to left bottom, #ffa085 ,#eb8b8b,#492f2f 98%);
+    background-image: linear-gradient(to left bottom, #fdffb3, #faff82,#492f2f 98%);
 }
 
 .flower__fall-down--yellow{
