@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activities Selection</title>
+    <link rel="apple-touch-icon" href="{% static 'elysabeth/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="x-icon" href="{% static 'elysabeth/favicon/favicon.ico' %}">
+    <link rel="manifest" href="{% static 'elysabeth/favicon/site.webmanifest' %}">
+    <link rel="stylesheet" href="{% static 'elysabeth/css/activities.css' %}" />
+  </head>
+  <body>
+    <div id="activityquestion"><b>What are we doing after?</b></div>
+    <form method="POST" action="{% url 'elys-activities' %}">
+      {% csrf_token %}
+        <div class="activities-selection">
+          <div class="activity-item">
+            <img src="{% static 'elysabeth/activities/aquarium.jpeg' %}" alt="aquarium" />
+            <label>
+              <input type="checkbox" name="activities" value="aquarium" />
+              Aquarium
+            </label>
+          </div>
+          <div class="activity-item">
+            <img src="{% static 'elysabeth/activities/arcade.jpeg' %}" alt="arcade" />
+            <label>
+              <input type="checkbox" name="activities" value="arcade"/>
+              Arcade
+            </label>
+          </div>
+          <div class="activity-item">
+            <img src="{% static 'elysabeth/activities/cinema.jpeg' %}" alt="cinema" />
+            <label>
+              <input type="checkbox" name="activities" value="cinema" />
+              Cinema
+            </label>
+          </div>
+          <div class="activity-item">
+            <img src="{% static 'elysabeth/activities/keramika.jpeg' %}" alt="ceramics" />
+            <label>
+              <input type="checkbox" name="activities" value="ceramics"/>
+              Ceramics
+            </label>
+          </div>
+          <div class="activity-item">
+            <img src="{% static 'elysabeth/activities/kunsthalle.jpeg' %}" alt="exhibition" />
+            <label>
+              <input type="checkbox" name="activities" value="exhibition"/>
+              Exhibition
+            </label>
+          </div>
+          <div class="activity-item">
+            <img src="{% static 'elysabeth/activities/park.jpeg' %}" alt="park" />
+            <label><input type="checkbox" name="activities" value="park"/>
+              Park
+            </label>
+          </div>
+        </div>
+        <button class="button" type="submit">
+          Last page
+        </button>
+      </form>
+  </body>
+</html>

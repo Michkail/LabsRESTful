@@ -19,15 +19,22 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path, re_path
 from django.views.static import serve
-from .views import index, custom_404
+from . import views
 
-handler404 = custom_404
+handler404 = views.custom_404
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", index, name="index"),
+    path("", views.index, name="index"),
     path("api/v1/user/", include("user.urls")),
-    re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
-    re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
+    path("elysabeth/", views.elys_index, name="elys-index"),
+    path("elysabeth/activities/", views.elys_activities, name="elys-activities"),
+    path("elysabeth/date/", views.elys_date, name="elys-date"),
+    path("elysabeth/dessert/", views.elys_dessert, name="elys-dessert"),
+    path("elysabeth/food/", views.elys_food, name="elys-food"),
+    path("elysabeth/lastpage/", views.elys_last_page, name="elys-last"),
+    path("elysabeth/thankyou/", views.elys_thankyou, name="elys-thanks")
 ]
 
 if settings.DEBUG is False:

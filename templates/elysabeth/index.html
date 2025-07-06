@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Be mine</title>
+    <link rel="apple-touch-icon" href="{% static 'elysabeth/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="x-icon" href="{% static 'elysabeth/favicon/favicon.ico' %}">
+    <link rel="manifest" href="{% static 'elysabeth/favicon/site.webmanifest' %}">
+    <link rel="stylesheet" href="{% static 'elysabeth/css/mine.css' %}" />
+  </head>
+  <body>
+    <div id="beMineQuestion">
+        <b>Will you be mine and go on a first date?</b>
+      <b>really?</b>
+    </div>
+
+    <form method="POST" action="{% url 'elys-index' %}">
+      {% csrf_token %}
+      <button type="submit" name="answer" value="Yes" class="answerButton">
+        Yes
+      </button>
+      <button type="submit" name="answer" value="No" id="noButton" class="answerButton">
+        I no no wanna 0(╥﹏╥)0
+      </button>
+    </form>
+
+    <br />
+    <img src="{% static 'elysabeth/cat.gif' %}" alt="cat asking question" class="responsive" />
+
+    <script>
+      document.getElementById("noButton").addEventListener("click", function () {
+        var yesButton = document.querySelector('button[value="Yes"]');
+        var currentFontSize = parseInt(window.getComputedStyle(yesButton).fontSize);
+        yesButton.style.fontSize = currentFontSize + 10 + "px";
+      });
+    </script>
+  </body>
+</html>

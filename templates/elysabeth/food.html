@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Selection</title>
+    <link rel="apple-touch-icon" href="{% static 'elysabeth/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="x-icon" href="{% static 'elysabeth/favicon/favicon.ico' %}">
+    <link rel="manifest" href="{% static 'elysabeth/favicon/site.webmanifest' %}">
+    <link rel="stylesheet" href="{% static 'elysabeth/css/food.css' %}" />
+  </head>
+  <body>
+    <div id="foodquestion">
+      <b>What food would you like to eat?</b>
+    </div>
+
+    <form method="POST" action="{% url 'elys-food' %}">
+      {% csrf_token %}
+      <div class="food-selection">
+        <div class="food-item">
+          <img src="{% static 'elysabeth/food/burgers.jpeg' %}" alt="Burgers, fries and fried chicken" />
+          <label>
+            <input type="checkbox" name="food" value="Burgers, fries and fried chicken" />
+            Burgers and Fried Chicken
+          </label>
+        </div>
+        <div class="food-item">
+          <img src="{% static 'elysabeth/food/dog.jpeg' %}" alt="dog" />
+          <label>
+            <input type="checkbox" name="food" value="hotdog" />
+            Hot dog
+          </label>
+        </div>
+        <div class="food-item">
+          <img src="{% static 'elysabeth/food/koreanfood.jpeg' %}" alt="koreanfood" />
+          <label>
+            <input type="checkbox" name="food" value="Korean food" />
+            Korean food
+          </label>
+        </div>
+        <div class="food-item">
+          <img src="{% static 'elysabeth/food/pasta.jpeg' %}" alt="pasta" />
+          <label>
+            <input type="checkbox" name="food" value="pasta" />
+            Pasta
+          </label>
+        </div>
+        <div class="food-item">
+          <img src="{% static 'elysabeth/food/pizza.jpeg' %}" alt="pizza" />
+          <label>
+            <input type="checkbox" name="food" value="pizza" />
+            Pizza
+          </label>
+        </div>
+        <div class="food-item">
+          <img src="{% static 'elysabeth/food/salad.jpeg' %}" alt="salad" />
+          <label>
+            <input type="checkbox" name="food" value="salad" />
+            Salad
+          </label>
+        </div>
+        <div class="food-item">
+          <img src="{% static 'elysabeth/food/steak.jpeg' %}" alt="steak" />
+          <label>
+            <input type="checkbox" name="food" value="steak" />
+            Steak
+          </label>
+        </div>
+        <div class="food-item">
+          <img src="{% static 'elysabeth/food/sushi.jpeg' %}" alt="sushi" />
+          <label>
+            <input type="checkbox" name="food" value="sushi" />
+            Sushi
+          </label>
+        </div>
+      </div>
+      <button class="button" type="submit">
+        Continue UWU
+      </button>
+    </form>
+  </body>
+</html>
