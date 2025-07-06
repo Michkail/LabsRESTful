@@ -4390,8 +4390,8 @@ textarea.form-control-lg {
   border-radius: 25px;
   overflow-anchor: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
-  box-shadow: 12px 12px 24px #1d1f20,
-              -12px -12px 24px #4a4f54;
+  box-shadow: 6px 6px 12px #1d1f20,
+              -6px -6px 12px #4a4f54;
 }
 @media (prefers-reduced-motion: reduce) {
   .accordion-button {
@@ -4400,6 +4400,9 @@ textarea.form-control-lg {
 }
 .accordion-button:not(.collapsed) {
   color: #275796;
+  background-color: #2f3336;
+  box-shadow: 8px 8px 16px #1d1f20,
+              -8px -8px 16px #3a3f43;
 }
 .accordion-button:not(.collapsed)::after {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2368E1FD'%3e%3cpath fill-rule='evenodd' d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/%3e  %3cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3e%3c/svg%3e");
@@ -4428,8 +4431,9 @@ textarea.form-control-lg {
 }
 .accordion-button:focus {
   z-index: 3;
-  outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(67, 189, 193, 0.25);
+  outline: none;
+  box-shadow: 8px 8px 16px #1d1f20,
+              -8px -8px 16px #3a3f43;
   
 }
 
@@ -4462,7 +4466,7 @@ textarea.form-control-lg {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
 }
-.accordion-item:last-of-type .accordion-button.collapsed {
+.accordion-item:last-of-type .accordion-button {
   border-bottom-right-radius: calc(0.25rem - 1px);
   border-bottom-left-radius: calc(0.25rem - 1px);
 }
@@ -11318,16 +11322,16 @@ form button.btn:focus {
   border-radius: 50px 10px 10px 50px;
   background: #2f3336;
   color: #68E1FD;
-  box-shadow: 12px 12px 24px #1d1f20,
-              -12px -12px 24px #4a4f54;
+  box-shadow: inset 6px 6px 12px #1d1f20,
+              inset -6px -6px 12px #4a4f54;
 }
 
 .serv-neu-concave {
   border-radius: 10px 50px 50px 10px;
   background: #2f3336;
   color: #68E1FD;
-  box-shadow: 12px 12px 24px #1d1f20,
-              -12px -12px 24px #4a4f54;
+  box-shadow: inset 6px 6px 12px #1d1f20,
+              inset -6px -16px 12px #4a4f54;
 }
 
 .serv-neu-prod-even {
@@ -11353,4 +11357,26 @@ form button.btn:focus {
   box-shadow: inset 12px 12px 24px #1d1f20,
               inset -12px -12px 24px #4a4f54;
 }
+
+.neu-out {
+  background: #151414;
+  border-radius: 16px;
+  padding: 1rem;
+  margin-left: -1rem;
+  box-shadow:
+    8px 8px 16px #0a0a0a,
+    -8px -8px 16px #1e1d1d;
+}
+
+.neu-header-section {
+  background: #151414;
+  border-radius: 16px;
+  padding: 1rem;
+  margin-left: -1rem;
+  box-shadow:
+    8px 8px 16px #0a0a0a,
+    -8px -8px 16px #1e1d1d;
+}
+
+
 /*# sourceMappingURL=style.css.map */
