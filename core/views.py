@@ -1,10 +1,10 @@
 import logging
 from django.shortcuts import render, redirect
 from django.conf import settings
-from twilio.rest import Client
+# from twilio.rest import Client
 
 twilio_number = 'whatsapp:+12565307557'
-client = Client(settings.ACCOUNT_SID, settings.AUTH_TOKEN)
+# client = Client(settings.ACCOUNT_SID, settings.AUTH_TOKEN)
 logger = logging.getLogger('django')
 
 
