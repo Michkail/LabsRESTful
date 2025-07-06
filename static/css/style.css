@@ -61,7 +61,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
-  background-color: #fff;
+  background-color: #2f3336;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -489,6 +489,7 @@ progress {
   font-size: calc(1.525rem + 3.3vw);
   font-weight: 300;
   line-height: 1.2;
+  color: rgba(67, 189, 193, 1)
 }
 @media (min-width: 1200px) {
   .display-3 {
@@ -4382,13 +4383,15 @@ textarea.form-control-lg {
   width: 100%;
   padding: 1.5rem 1.5rem;
   font-size: 1rem;
-  color: #212529;
+  color: #020202;
   text-align: left;
-  background-color: #fff;
+  background-color: #2f3336;
   border: 0;
-  border-radius: 0;
+  border-radius: 25px;
   overflow-anchor: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
+  box-shadow: 12px 12px 24px #1d1f20,
+              -12px -12px 24px #4a4f54;
 }
 @media (prefers-reduced-motion: reduce) {
   .accordion-button {
@@ -4397,11 +4400,9 @@ textarea.form-control-lg {
 }
 .accordion-button:not(.collapsed) {
   color: #275796;
-  background-color: rgba(67, 189, 193, 0.36);
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
 }
 .accordion-button:not(.collapsed)::after {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23275796'%3e%3cpath fill-rule='evenodd' d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/%3e  %3cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2368E1FD'%3e%3cpath fill-rule='evenodd' d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/%3e  %3cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3e%3c/svg%3e");
   transform: rotate(-180deg);
 }
 .accordion-button::after {
@@ -4410,10 +4411,12 @@ textarea.form-control-lg {
   height: 1.25rem;
   margin-left: auto;
   content: "";
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23275796'%3e%3cpath fill-rule='evenodd' d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/%3e %3cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2368E1FD'%3e%3cpath fill-rule='evenodd' d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/%3e %3cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-size: 1.25rem;
   transition: transform 0.2s ease-in-out;
+  box-shadow: 12px 12px 24px #1d1f20,
+              -12px -12px 24px #4a4f54;
 }
 @media (prefers-reduced-motion: reduce) {
   .accordion-button::after {
@@ -4425,18 +4428,24 @@ textarea.form-control-lg {
 }
 .accordion-button:focus {
   z-index: 3;
-  border-color: #275796;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(67, 189, 193, 0.25);
+  
 }
 
 .accordion-header {
   margin-bottom: 0;
+  border-radius: 25px;
+  box-shadow: inset 12px 12px 24px #1d1f20,
+              inset -12px -12px 24px #4a4f54;
 }
 
 .accordion-item {
-  background-color: #fff;
+  background-color: #2f3336;
+  border-radius: 25px;
   border: 1px solid rgba(0, 0, 0, 0.125);
+  box-shadow: inset 12px 12px 24px #1d1f20,
+              inset -12px -12px 24px #4a4f54;
 }
 .accordion-item:first-of-type {
   border-top-left-radius: 0.25rem;
@@ -10761,32 +10770,55 @@ textarea.form-control-lg {
   padding: 0.8375rem 4.375rem 0.8375rem 1.25rem;
   font-weight: 700;
   margin: 0;
-  border: 0.1rem solid rgba(255, 255, 255, 0.6);
-  background-color: #fff;
+  border: none;
+  border-radius: 2rem;
+  background: #2f3336; /* background dark abu-abu */
+  color: #39d0f2; /* cyan neon text */
+  box-shadow: 
+    8px 8px 16px #1d1f20,  /* shadow gelap */
+    -8px -8px 16px #3a3f43; /* highlight terang */
+  transition: all 0.3s ease;
   display: block;
 }
+
 .btn-rounded span {
   position: absolute;
-  background-color: #43BDC1;
+  background-color: #39d0f2; /* blue icon bg */
   width: 2.5rem;
   height: 2.5rem;
   top: 50%;
   right: 5px;
   transform: translateY(-50%);
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    inset 1px 1px 5px rgba(0,0,0,0.4),
+    inset -2px -2px 5px rgba(255,255,255,0.1);
 }
+
 .btn-rounded span i {
   color: #fff;
   font-size: 1rem;
-  line-height: 2.5rem;
+  line-height: 1;
 }
+
 .btn-rounded:hover {
-  background: linear-gradient(to right, rgba(67, 189, 193, 1), rgba(39, 87, 150, 1));
+  background: #2f3336;
+  box-shadow: 
+    inset 4px 4px 8px #1d1f20,
+    inset -4px -4px 8px #3a3f43;
   color: #fff;
 }
+
 .btn-rounded:hover span {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #1d1f20;
+  box-shadow:
+    inset 2px 2px 5px rgba(0,0,0,0.6),
+    inset -2px -2px 5px rgba(255,255,255,0.05);
 }
+
 
 .display-2 {
   margin-bottom: 1rem;
@@ -10796,12 +10828,14 @@ textarea.form-control-lg {
 .display-2--intro {
   display: inline-block;
   font-weight: 700;
+  color: #2f3336;
   font-family: "Poppins", sans-serif;
 }
 .display-2--description {
   font-size: 1rem;
   display: block;
   margin-top: 1.2rem;
+  color: #2f3336;
   text-transform: none;
 }
 @media (min-width: 992px) {
@@ -10933,7 +10967,7 @@ textarea.form-control-lg {
 
 .services {
   position: relative;
-  background-color: #e0e0e0;
+  background-color: #2f3336;
   padding: 1rem 0;
 }
 .services__content {
@@ -10974,20 +11008,38 @@ textarea.form-control-lg {
   background: linear-gradient(to right, rgba(67, 189, 193, 1), rgba(39, 87, 150, 1));
 }
 .testimonials__card {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 2rem 1.25rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 0.625rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 2rem 1.25rem;
   height: auto;
   text-align: center;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.15), /* outer soft */
+    inset 0 1px 0 rgba(255, 255, 255, 0.2); /* inner highlight */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.testimonials__card:hover {
+  transform: scale(1.001);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.25),
+    inset 0 2px 2px rgba(255, 255, 255, 0.25);
+}
+
 .testimonials__card i {
   font-size: 1.5rem;
   color: rgba(67, 189, 193, 1);
 }
+
 .testimonials__card .ratings i {
-  color: rgba(67, 189, 193, 1);
   font-size: 1rem;
+  color: rgba(67, 189, 193, 1);
 }
+
+
 .testimonials__picture {
   width: 6rem;
   height: 6rem;
@@ -11069,7 +11121,7 @@ textarea.form-control-lg {
 
 .get-started {
   padding: 4rem 0;
-  background-color: #e9ecef;
+  background-color: #2f3336;
 }
 
 .cta-info {
@@ -11095,16 +11147,63 @@ textarea.form-control-lg {
 .form {
   padding: 3rem;
 }
-.form button {
-  border: none;
-  color: #fff;
-  text-transform: capitalize;
+form input.form-control,
+form textarea.form-control {
+  background: #2f3336 !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow:
+    8px 8px 16px #1d1f20,
+    -8px -8px 16px #3a3f43 !important;
+  transition: all 0.2s ease;
+  border-radius: 12px;
 }
-.form button a {
-  color: #fff;
-  text-decoration: none;
-  text-transform: capitalize;
+
+form input.form-control:focus,
+form textarea.form-control:focus {
+  background: #2f3336 !important;
+  color: #fff !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow:
+    inset 4px 4px 8px #1d1f20,
+    inset -4px -4px 8px #3a3f43 !important;
 }
+
+form button.btn {
+  background: #2f3336 !important;
+  color: #68E1FD !important;
+  border: none !important;
+  border-radius: 50px;
+  box-shadow:
+    8px 8px 16px #1d1f20,
+    -8px -8px 16px #3a3f43;
+  transition: all 0.2s ease;
+}
+
+form button.btn:hover {
+  box-shadow:
+    10px 10px 20px #1a1c1e,
+    -10px -10px 20px #454a50;
+  color: #fff !important;
+}
+
+form button.btn:active {
+  box-shadow:
+    inset 4px 4px 8px #1d1f20,
+    inset -4px -4px 8px #3a3f43 !important;
+  background: #2f3336 !important;
+  color: #fff !important;
+}
+
+form button.btn:focus {
+  outline: none !important;
+  box-shadow:
+    8px 8px 16px #1d1f20,
+    -8px -8px 16px #3a3f43;
+}
+
+
 
 .footer {
   padding-top: 1rem;
@@ -11217,29 +11316,41 @@ textarea.form-control-lg {
 
 .serv-neu-flat {
   border-radius: 50px 10px 10px 50px;
-  background: linear-gradient(225deg, #cacaca, #f0f0f0);
-  box-shadow:  -20px 20px 62px #cccccc,
-               20px -20px 62px #f4f4f4;
+  background: #2f3336;
+  color: #68E1FD;
+  box-shadow: 12px 12px 24px #1d1f20,
+              -12px -12px 24px #4a4f54;
 }
 
 .serv-neu-concave {
   border-radius: 10px 50px 50px 10px;
-  background: linear-gradient(145deg, #cacaca, #f0f0f0);
-  box-shadow:  20px 20px 40px #bebebe,
-               -20px -20px 60px #ffffff;
+  background: #2f3336;
+  color: #68E1FD;
+  box-shadow: 12px 12px 24px #1d1f20,
+              -12px -12px 24px #4a4f54;
 }
 
 .serv-neu-prod-even {
   border-radius: 50px;
-  background: #e0e0e0;
-  box-shadow: inset 20px 20px 31px #bebebe,
-              inset -20px -20px 31px #ffffff;
+  background: #2f3336;
+  color: #68E1FD;
+  box-shadow: 12px 12px 24px #1d1f20,
+              -12px -12px 24px #4a4f54;
 }
 
 .serv-neu-prod-odd {
   border-radius: 50px;
-  background: #e0e0e0;
-  box-shadow: inset 20px -20px 31px #bebebe,
-              inset -20px 20px 31px #ffffff;
+  background: #2f3336;
+  color: #68E1FD;
+  box-shadow: 12px 12px 24px #1d1f20,
+              -12px -12px 24px #4a4f54;
+}
+
+.get_started__card {
+  border-radius: 0px 25px 25px 0px;
+  background: #2f3336;
+  color: #68E1FD;
+  box-shadow: inset 12px 12px 24px #1d1f20,
+              inset -12px -12px 24px #4a4f54;
 }
 /*# sourceMappingURL=style.css.map */
