@@ -85,11 +85,18 @@ function changeLanguage(language) {
       document.getElementById('mail_titleText').innerText = data.mail_title;
       document.getElementById('mail_submitText').innerText = data.mail_submit;
 			document.getElementsByClassName('red_attentionText')[0].innerText = data.red_attention;
+      document.getElementsByClassName('red_attentionAPIsText')[0].innerText = data.red_attentionAPIs;
 
       var redAttentionElements = document.getElementsByClassName('red_attentionText');
 
 			for (var i = 0; i < redAttentionElements.length; i++) {
 			  redAttentionElements[i].innerText = data.red_attention;
+			}
+
+      var redAttentionAPIsElements = document.getElementsByClassName('red_attentionAPIsText');
+
+			for (var i = 0; i < redAttentionAPIsElements.length; i++) {
+			  redAttentionAPIsElements[i].innerText = data.red_attention_APIs;
 			}
     });
 }
