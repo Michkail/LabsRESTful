@@ -684,21 +684,25 @@
       <div class="col-12 col-lg-6 get_started__card p-3">
         <div class="form w-100 pb-2">
           <h5 class="display-3--title mb-5" id="mail_titleText">tell us what kind of service you need</h5>
-          <form action="#" class="row">
+          <form id="contactForm" class="row">
             <div class="col-lg-6 col-md mb-3">
               <input type="text" placeholder="First Name" id="inputFirstName" class="shadow form-control form-control-lg">
+              <div class="invalid-feedback" id="errorFirstName"></div>
             </div>
             <div class="col-lg-6 col-md mb-3">
               <input type="text" placeholder="Last Name" id="inputLastName" class="shadow form-control form-control-lg">
+              <div class="invalid-feedback" id="errorLastName"></div>
             </div>
             <div class="col-lg-12 mb-3">
               <input type="email" placeholder="email address" id="inputEmail" class="shadow form-control form-control-lg">
+              <div class="invalid-feedback" id="errorEmail"></div>
             </div>
             <div class="col-lg-12 mb-3">
               <textarea name="message" placeholder="message" id="message" rows="8" class="shadow form-control form-control-lg"></textarea>
+              <div class="invalid-feedback" id="errorMessage"></div>
             </div>
             <div class="text-center d-grid mt-1">
-              <button type="button" class="btn rounded-pill p-2">
+              <button type="button" id="sendBtn" class="btn rounded-pill p-2">
                 <i class="fas fa-paper-plane">&nbsp;</i><span id="mail_submitText">Submit</span>
               </button>
             </div>
@@ -830,7 +834,7 @@
       <div class="row text-center text-white">
         <div class="col-12">
           <div class="footer-bottom__copyright">
-            &COPY; Copyright 2025 <a href="https://pitrlabs.com">pitrLabs</a>
+            Copyright &COPY; 2025 pitrLabs
           </div>
         </div>
       </div>
@@ -856,6 +860,91 @@
       });
     
     </script>
-     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script>
+      document.getElementById('sendBtn').addEventListener('click', async function () {
+        const sendBtn = document.getElementById('sendBtn');
+      
+        const firstNameInput = document.getElementById('inputFirstName');
+        const lastNameInput = document.getElementById('inputLastName');
+        const emailInput = document.getElementById('inputEmail');
+        const messageInput = document.getElementById('message');
+      
+        const firstName = firstNameInput.value.trim();
+        const lastName = lastNameInput.value.trim();
+        const email = emailInput.value.trim();
+        const message = messageInput.value.trim();
+      
+        let isValid = true;
+      
+        [firstNameInput, lastNameInput, emailInput, messageInput].forEach(el => el.classList.remove('invalid'));
+        ['errorFirstName', 'errorLastName', 'errorEmail', 'errorMessage'].forEach(id => {
+          document.getElementById(id).innerText = '';
+        });
+      
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      
+        if (!firstName) {
+          firstNameInput.classList.add('invalid');
+          document.getElementById('errorFirstName').innerText = 'First name is required';
+          isValid = false;
+        }
+      
+        if (!lastName) {
+          lastNameInput.classList.add('invalid');
+          document.getElementById('errorLastName').innerText = 'Last name is required';
+          isValid = false;
+        }
+      
+        if (!email) {
+          emailInput.classList.add('invalid');
+          document.getElementById('errorEmail').innerText = 'Email is required';
+          isValid = false;
+        } else if (!emailRegex.test(email)) {
+          emailInput.classList.add('invalid');
+          document.getElementById('errorEmail').innerText = 'Email format is invalid';
+          isValid = false;
+        }
+      
+        if (!message) {
+          messageInput.classList.add('invalid');
+          document.getElementById('errorMessage').innerText = 'Message is required';
+          isValid = false;
+        }
+      
+        if (!isValid) return;
+      
+        const response = await fetch('/send-email/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'X-CSRFToken': '{{ csrf_token }}'
+          },
+          body: new URLSearchParams({
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
+            message: message
+          })
+        });
+      
+        const result = await response.json();
+      
+        if (result.success) {
+          document.getElementById('contactForm').reset();
+      
+          sendBtn.innerHTML = `<span id="mail_submitText">Submitted</span>&nbsp;<i class="fas fa-paper-plane"></i>`;
+          sendBtn.classList.add('btn-pressed');
+      
+          setTimeout(() => {
+            sendBtn.innerHTML = `<i class="fas fa-paper-plane">&nbsp;</i><span id="mail_submitText">Submit</span>`;
+            sendBtn.classList.remove('btn-pressed');
+            sendBtn.blur();
+          }, 3000);
+        } else {
+          alert('Error: ' + (result.error || 'Something went wrong'));
+        }
+      });      
+    </script>
 </body>
 </html>

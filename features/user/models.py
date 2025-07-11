@@ -58,6 +58,27 @@ class User(AbstractBaseUser, PermissionsMixin):
 
         super(User, self).save(*args, **kwargs)
 
+    class Meta:
+        pass
+
+
+class ContactMessage(models.Model):
+    STATUS_CHOICES = [
+        ('sent', 'Sent'),
+        ('failed', 'Failed'),
+    ]
+
+    full_name = models.CharField(max_length=200)
+    email = models.EmailField()
+    message = models.TextField()
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='sent')
+    error_message = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.full_name} ({self.email}) - {self.status}"
+
+
 #
 #
 # class Address(DjangoCassandraModel, PythonCassandraModel):

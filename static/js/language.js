@@ -85,7 +85,7 @@ function changeLanguage(language) {
       document.getElementById('mail_titleText').innerText = data.mail_title;
       document.getElementById('mail_submitText').innerText = data.mail_submit;
 			document.getElementsByClassName('red_attentionText')[0].innerText = data.red_attention;
-      document.getElementsByClassName('red_attentionAPIsText')[0].innerText = data.red_attentionAPIs;
+      document.getElementsByClassName('red_attentionAPIsText')[0].innerText = data.red_attention_APIs;
 
       var redAttentionElements = document.getElementsByClassName('red_attentionText');
 

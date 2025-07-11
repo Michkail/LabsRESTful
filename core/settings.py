@@ -51,11 +51,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     # Additional Libs
-    "django_cassandra_engine",
+    # "django_cassandra_engine",
     "rest_framework",
 
     # Apps
-    "user.apps.UserConfig"
+    "features.user",
 ]
 
 MIDDLEWARE = [
@@ -87,6 +87,14 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "core.wsgi.application"
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_PORT = os.getenv('EMAIL_PORT')
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

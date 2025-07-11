@@ -11148,6 +11148,24 @@ textarea.form-control-lg {
   font-size: 1.2rem;
 }
 
+form input.invalid,
+form textarea.invalid {
+  border: 1px solid #dc3545 !important;
+}
+
+.invalid-feedback {
+  display: none;
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+input.invalid ~ .invalid-feedback,
+textarea.invalid ~ .invalid-feedback {
+  display: block;
+}
+
+
 .form {
   padding: 3rem;
 }
@@ -11207,7 +11225,13 @@ form button.btn:focus {
     -8px -8px 16px #3a3f43;
 }
 
-
+form button.btn.btn-pressed {
+  box-shadow:
+    inset 4px 4px 8px #1d1f20,
+    inset -4px -4px 8px #3a3f43 !important;
+  background: #2f3336 !important;
+  color: #fff !important;
+}
 
 .footer {
   padding-top: 1rem;

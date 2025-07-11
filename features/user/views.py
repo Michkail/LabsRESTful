@@ -3,7 +3,7 @@ from rest_framework.permissions import IsAdminUser, AllowAny
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import User
-from .serializers import UsersSerializer, CreateUserSerializer
+from features.user.serializers import UsersSerializer, CreateUserSerializer
 
 
 class UserListAPIView(generics.ListAPIView):

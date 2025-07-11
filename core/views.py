@@ -1,7 +1,17 @@
+import os
 import logging
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse, HttpResponseBadRequest
+from django.core.mail import EmailMessage
+from django.core.validators import validate_email
+from django.core.exceptions import ValidationError
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
-from django.conf import settings
+from dotenv import load_dotenv
+from features.user.models import ContactMessage
 # from twilio.rest import Client
+
+load_dotenv()
 
 twilio_number = 'whatsapp:+12565307557'
 # client = Client(settings.ACCOUNT_SID, settings.AUTH_TOKEN)
@@ -14,6 +24,50 @@ def index(request):
 
 def custom_404(request, exception):
     return render(request, '404.html', status=404)
+
+
+@csrf_exempt
+def send_email_view(request):
+    if request.method == 'POST':
+        first_name = request.POST.get('first_name', '').strip()
+        last_name = request.POST.get('last_name', '').strip()
+        sender_email = request.POST.get('email', '').strip()
+        message = request.POST.get('message', '').strip()
+        full_name = f"{first_name} {last_name}"
+        subject = f"From {full_name}"
+        body = f"""Message form:\n\nName: {full_name}\nEmail: {sender_email}\n\nMessage:\n{message}""".strip()
+
+        try:
+            validate_email(sender_email)
+
+        except ValidationError:
+            return JsonResponse({'success': False, 'error': 'Invalid email'}, status=400)
+
+        status = 'sent'
+        error_message = ''
+
+        try:
+            email = EmailMessage(subject=subject,
+                                 body=body,
+                                 from_email=os.getenv('DEFAULT_FROM_EMAIL'),
+                                 to=[os.getenv('RECIPIENT')],
+                                 reply_to=[sender_email])
+            email.send()
+
+        except Exception as e:
+            status = 'failed'
+            error_message = str(e)
+
+        ContactMessage.objects.create(full_name=full_name,
+                                      email=sender_email,
+                                      message=message,
+                                      status=status,
+                                      error_message=error_message)
+
+        return JsonResponse({'success': status == 'sent'})
+    
+    return JsonResponse({'success': False, 'error': 'Invalid request method'}, status=405)
+
 
 
 def elys_index(request):
