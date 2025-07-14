@@ -10899,6 +10899,44 @@ textarea.form-control-lg {
   }
 }
 
+.custom-border {
+  position: relative;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.custom-border::after {
+  content: "";
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .custom-border {
+    border-bottom: none; /* hilangkan default full-width border */
+  }
+
+  .custom-border::after {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 25%; /* jarak dari kiri */
+    width: 50%; /* ubah sesuai kebutuhan */
+    height: 1px;
+    background-color: #ccc;
+  }
+}
+
+@media (min-width: 768px) {
+  .custom-border {
+    border-right: 1px solid #ccc;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+
+
+
 .gradient {
   background: linear-gradient(to right, rgba(67, 189, 193, 1), rgba(39, 87, 150, 1));
 }
