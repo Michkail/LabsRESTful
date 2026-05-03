@@ -42,6 +42,9 @@ function changeLanguage(language) {
       document.getElementById('serv_title_mlText').innerText = data.serv_title_ml;
       document.getElementById('serv_mlst_descText').innerText = data.serv_mlst_desc;
       document.getElementById('serv_mlnd_descText').innerText = data.serv_mlnd_desc;
+      document.getElementById('serv_title_waText').innerText = data.serv_title_wa;
+      document.getElementById('serv_wast_descText').innerText = data.serv_wast_desc;
+      document.getElementById('serv_wand_descText').innerText = data.serv_wand_desc;
       document.getElementById('testimonial_titleText').innerText = data.testimonial_title;
       document.getElementById('testimonial_descText').innerText = data.testimonial_desc;
       document.getElementById('testimonial_stText').innerText = data.testimonial_st;
