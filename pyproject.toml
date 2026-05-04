@@ -16,7 +16,6 @@ qrcode = "^7.4.2"
 djangorestframework = "^3.14.0"
 psycopg2-binary = "^2.9.9"
 twilio = "^9.3.3"
-scylla-driver = "3.25.0"
 
 
 [build-system]
